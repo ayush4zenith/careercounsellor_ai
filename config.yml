@@ -5,7 +5,7 @@ pipeline:
 - name: WhitespaceTokenizer
 - name: RegexFeaturizer
 - name: LexicalSyntacticFeaturizer
-- name: CountVectorsFeaturizer     # Keep this one (for word-level features)
+- name: CountVectorsFeaturizer     # for word-level features
     #- name: CountVectorsFeaturizer # Comment out this one (for char-level n-gram features)
     #  analyzer: CharNGramAnalyzer
     #  min_ngram: 1
