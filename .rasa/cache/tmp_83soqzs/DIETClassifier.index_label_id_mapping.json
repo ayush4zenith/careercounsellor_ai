@@ -1,0 +1,18 @@
+{
+  "0": "affirm",
+  "1": "ask_interests",
+  "2": "ask_more_info",
+  "3": "chitchat",
+  "4": "deny",
+  "5": "goodbye",
+  "6": "greet",
+  "7": "inform_analytical_interest",
+  "8": "inform_arts_interest",
+  "9": "inform_commerce_interest",
+  "10": "inform_creative_interest",
+  "11": "inform_health_interest",
+  "12": "inform_practical_interest",
+  "13": "inform_social_interest",
+  "14": "inform_tech_interest",
+  "15": "thanks"
+}

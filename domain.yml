@@ -1,0 +1,77 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - thanks
+  - affirm
+  - deny
+  - ask_interests
+  - inform_tech_interest
+  - inform_arts_interest
+  - inform_commerce_interest
+  - inform_health_interest
+  - inform_creative_interest
+  - inform_analytical_interest
+  - inform_social_interest
+  - inform_practical_interest
+  - ask_more_info
+  - chitchat
+
+entities:
+  - interest
+
+slots:
+  last_recommended_category:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: custom
+
+  last_recommended_career:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: custom
+
+
+responses:
+  utter_greet:
+    - text: "Hello! I'm your AI Career Counsellor. How can I help you explore career paths today?"
+    - text: "Hi there! Ready to discover exciting careers? What are your interests?"
+    - text: "Greetings! Tell me what you're passionate about, and I'll suggest some career paths."
+
+  utter_ask_interests:
+    - text: "To help me recommend the best career paths for you, could you tell me a bit about your interests? Are you interested in technology, arts, commerce, health, creative fields, analytical roles, social work, or something practical?"
+    - text: "Great! What subjects or activities do you enjoy the most? This will help me narrow down options for you."
+    - text: "What kind of work excites you? Knowing your interests helps me guide you better."
+
+  utter_goodbye:
+    - text: "Goodbye! I hope I was helpful. Feel free to come back anytime!"
+    - text: "See you later! Best of luck with your career journey!"
+    - text: "Farewell! Remember to pursue what you love."
+
+  utter_thank_you:
+    - text: "You're welcome! I'm glad I could assist you."
+    - text: "My pleasure! Is there anything else I can help with?"
+    - text: "Anytime! Happy to help."
+
+  utter_chitchat:
+    - text: "I'm a career counselling assistant designed to help students like you. How can I guide you today?"
+    - text: "I'm here to help you explore career paths. What's on your mind?"
+    - text: "I am a virtual career counsellor, powered by AI, here to assist you."
+    - text: "I'm an AI assistant. My goal is to help you find a suitable career path."
+    - text: "I'm doing well, thank you for asking! How can I assist you with career exploration?"
+    - text: "Hi there! How can I help you today?"
+
+  utter_default_recommendation:
+    - text: "I'm sorry, I couldn't identify a specific career interest from your last message. Could you tell me more about what you like to do, or which subjects you enjoy?"
+    - text: "Hmm, I need a little more information to give a good recommendation. What kind of fields or activities excite you?"
+    - text: "It seems I'm a bit lost. Could you try rephrasing your interests, or perhaps pick from categories like technology, arts, commerce, or health?"
+
+actions:
+  - action_recommend_career
+
+session_config:
+  session_expiration_time_in_minutes: 60
+  carry_over_slots_to_new_session: true

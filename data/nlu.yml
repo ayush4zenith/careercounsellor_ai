@@ -1,0 +1,186 @@
+version: "3.1"
+nlu:
+- intent: greet
+  examples: |
+    - hi
+    - hello
+    - hey
+    - good morning
+    - good evening
+    - heya
+    - howdy
+    - greetings
+
+- intent: goodbye
+  examples: |
+    - bye
+    - goodbye
+    - see you around
+    - see you later
+    - ciao
+    - gotta go
+    - talk to you later
+
+- intent: thanks
+  examples: |
+    - thanks
+    - thank you
+    - appreciate it
+    - that was helpful
+    - thanks for your help
+    - much obliged
+
+- intent: affirm
+  examples: |
+    - yes
+    - indeed
+    - of course
+    - that's right
+    - correct
+    - sure
+    - yeah
+    - yup
+    - absolutely
+
+- intent: deny
+  examples: |
+    - no
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+    - nope
+
+- intent: ask_interests
+  examples: |
+    - what kind of careers do you recommend?
+    - what careers are out there?
+    - I don't know what I'm interested in
+    - I need help finding a career
+    - tell me about career options
+    - can you help me choose a career?
+    - what are some career fields?
+    - help me find a job path
+    - suggest some career choices
+
+- intent: inform_tech_interest
+  examples: |
+    - I'm interested in technology
+    - tech jobs
+    - computers
+    - software
+    - I like coding
+    - coding
+    - I'm into IT
+    - I want to work with technology
+    - something about software development
+    - coding and computers
+    - machine learning
+    - artificial intelligence
+    - web development
+    - data science
+    - cybersecurity
+
+- intent: inform_arts_interest
+  examples: |
+    - I'm interested in arts
+    - creative things
+    - design
+    - writing
+    - I like drawing
+    - something artistic
+    - visual arts
+    - media and communication
+    - content creation
+    - graphic design
+    - journalism
+    - film
+
+- intent: inform_commerce_interest
+  examples: |
+    - I'm interested in business
+    - commerce field
+    - finance
+    - marketing
+    - I like economics
+    - something related to money
+    - sales and management
+    - accounting and auditing
+    - financial analysis
+    - entrepreneurship
+
+- intent: inform_health_interest
+  examples: |
+    - I'm interested in healthcare
+    - medicine
+    - helping people as a doctor
+    - nursing
+    - medical field
+    - health and wellness
+    - I want to work in hospitals
+    - pharmacy
+    - public health
+
+- intent: inform_creative_interest
+  examples: |
+    - I want a creative career
+    - something where I can create
+    - fashion
+    - music
+    - performing arts
+    - photography
+    - interior design
+
+- intent: inform_analytical_interest
+  examples: |
+    - I like analyzing data
+    - I'm good at problem-solving
+    - research based jobs
+    - science and research
+    - logical reasoning
+    - statistics
+    - engineering (analytical aspects)
+
+- intent: inform_social_interest
+  examples: |
+    - I like helping people directly
+    - social work
+    - community development
+    - human services
+    - teaching
+    - counseling
+
+- intent: inform_practical_interest
+  examples: |
+    - I like hands-on work
+    - something practical
+    - building things
+    - engineering (general)
+    - skilled trades
+    - mechanics
+    - electrical work
+    - construction
+
+- intent: ask_more_info
+  examples: |
+    - tell me more
+    - elaborate
+    - what else
+    - any more options?
+    - go on
+    - what's next?
+    - give me another one
+    - tell me something different
+
+- intent: chitchat
+  examples: |
+    - how are you?
+    - what's your purpose?
+    - who are you?
+    - tell me about yourself
+    - you're smart
+    - that's cool
+    - thank you for asking
+    - what can you do?
+    - are you a bot?

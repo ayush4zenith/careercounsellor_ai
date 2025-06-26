@@ -1,0 +1,59 @@
+{
+  "type": "IntentMaxHistoryTrackerFeaturizer",
+  "state_featurizer": {
+    "action_texts": [],
+    "entity_tag_specs": [],
+    "feature_states": {
+      "intent": {
+        "affirm": 0,
+        "ask_interests": 1,
+        "ask_more_info": 2,
+        "back": 3,
+        "chitchat": 4,
+        "deny": 5,
+        "goodbye": 6,
+        "greet": 7,
+        "inform_analytical_interest": 8,
+        "inform_arts_interest": 9,
+        "inform_commerce_interest": 10,
+        "inform_creative_interest": 11,
+        "inform_health_interest": 12,
+        "inform_practical_interest": 13,
+        "inform_social_interest": 14,
+        "inform_tech_interest": 15,
+        "nlu_fallback": 16,
+        "out_of_scope": 17,
+        "restart": 18,
+        "session_start": 19,
+        "thanks": 20
+      },
+      "action_name": {
+        "action_listen": 0,
+        "action_restart": 1,
+        "action_session_start": 2,
+        "action_default_fallback": 3,
+        "action_deactivate_loop": 4,
+        "action_revert_fallback_events": 5,
+        "action_default_ask_affirmation": 6,
+        "action_default_ask_rephrase": 7,
+        "action_two_stage_fallback": 8,
+        "action_unlikely_intent": 9,
+        "action_back": 10,
+        "...": 11,
+        "action_extract_slots": 12,
+        "action_recommend_career": 13,
+        "utter_ask_interests": 14,
+        "utter_chitchat": 15,
+        "utter_default_recommendation": 16,
+        "utter_goodbye": 17,
+        "utter_greet": 18,
+        "utter_thank_you": 19
+      },
+      "entities": {},
+      "slots": {},
+      "active_loop": {}
+    }
+  },
+  "remove_duplicates": true,
+  "max_history": 5
+}

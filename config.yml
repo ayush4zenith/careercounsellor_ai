@@ -1,0 +1,35 @@
+recipe: default.v1
+language: en
+
+pipeline:
+- name: WhitespaceTokenizer
+- name: RegexFeaturizer
+- name: LexicalSyntacticFeaturizer
+- name: CountVectorsFeaturizer     # Keep this one (for word-level features)
+    #- name: CountVectorsFeaturizer # Comment out this one (for char-level n-gram features)
+    #  analyzer: CharNGramAnalyzer
+    #  min_ngram: 1
+    #  max_ngram: 4
+- name: DIETClassifier
+  epochs: 100
+  constrain_similarities: true
+- name: EntitySynonymMapper
+- name: ResponseSelector
+  epochs: 100
+  retrieval_intent: chitchat
+- name: FallbackClassifier
+  threshold: 0.7
+  ambiguity_threshold: 0.1
+
+policies:
+- name: MemoizationPolicy
+- name: RulePolicy
+- name: TEDPolicy
+  epochs: 100
+  constrain_similarities: true
+- name: UnexpecTEDIntentPolicy
+  epochs: 100
+  max_history: 5
+  rejection_threshold: 0.6
+    # REMOVED: - name: TwoStageFallbackPolicy (from previous fix)
+assistant_id: 20250622-200934-greasy-stress

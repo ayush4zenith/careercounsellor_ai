@@ -1,0 +1,96 @@
+version: "3.1"
+stories:
+- story: happy path - tech interest
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_interests
+  - action: utter_ask_interests
+  - intent: inform_tech_interest
+  - action: action_recommend_career
+  - intent: thanks
+  - action: utter_thank_you
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: arts interest path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_interests
+  - action: utter_ask_interests
+  - intent: inform_arts_interest
+  - action: action_recommend_career
+  - intent: ask_more_info # User asks for more info on the same topic
+  - action: action_recommend_career # Re-run action to provide another option or re-summarize
+
+- story: commerce interest directly
+  steps:
+  - intent: inform_commerce_interest
+  - action: action_recommend_career
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: chitchat
+  steps:
+  - intent: chitchat
+  - action: utter_chitchat
+
+- story: greet then deny then goodbye
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_interests
+  - action: utter_ask_interests
+  - intent: deny
+  - action: utter_chitchat # Or a more specific response like "Sorry I couldn't help, goodbye!"
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: health interest and thank you
+  steps:
+  - intent: inform_health_interest
+  - action: action_recommend_career
+  - intent: thanks
+  - action: utter_thank_you
+
+- story: creative interest, then ask for more
+  steps:
+  - intent: inform_creative_interest
+  - action: action_recommend_career
+  - intent: ask_more_info
+  - action: action_recommend_career
+
+- story: analytical interest flow
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: inform_analytical_interest
+  - action: action_recommend_career
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: social interest and confirmation
+  steps:
+  - intent: inform_social_interest
+  - action: action_recommend_career
+  - intent: affirm
+  - action: utter_thank_you # Bot acknowledges affirmation, could lead to more detailed info too
+
+- story: practical interest then thanks and goodbye
+  steps:
+  - intent: inform_practical_interest
+  - action: action_recommend_career
+  - intent: thanks
+  - action: utter_thank_you
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: user asks interests then denies
+  steps:
+  - intent: ask_interests
+  - action: utter_ask_interests
+  - intent: deny
+  - action: utter_chitchat
+  - intent: goodbye
+  - action: utter_goodbye

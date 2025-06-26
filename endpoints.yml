@@ -1,0 +1,4 @@
+# If you want to use an external HTTP API for your actions, you can configure it here.
+# The endpoint of your action server.
+action_endpoint:
+  url: "http://localhost:5055/webhook"
