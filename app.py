@@ -13,37 +13,28 @@ st.set_page_config(
     layout="centered",
     initial_sidebar_state="collapsed"
 )
-
-# 💅 Gemini-style CSS
+# CSS
 st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
 html, body, [class*="st-"] {
     font-family: 'Inter', sans-serif;
-    color: #E0E0E0;
+    color: #C9D1D9;
 }
 
 .stApp {
-    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-    background-size: 400% 400%;
-    animation: gradientShift 15s ease infinite;
-    color: white;
-}
-
-@keyframes gradientShift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    background-color: #0D1117;
+    color: #C9D1D9;
 }
 
 .main-header {
     font-size: 2.8em;
     font-weight: bold;
-    color: #00ffae;
+    color: #58A6FF;
     text-align: center;
     margin-bottom: 25px;
-    text-shadow: 1px 1px 8px rgba(0, 255, 200, 0.4);
+    text-shadow: 1px 1px 8px rgba(88, 166, 255, 0.4);
 }
 
 .message-row {
@@ -54,7 +45,7 @@ html, body, [class*="st-"] {
 
 .user-message, .bot-message {
     backdrop-filter: blur(10px);
-    background-color: rgba(255, 255, 255, 0.07);
+    background-color: #161B22;
     padding: 12px 18px;
     border-radius: 18px;
     max-width: 80%;
@@ -64,7 +55,7 @@ html, body, [class*="st-"] {
 }
 
 .user-message {
-    border: 1px solid rgba(0, 255, 100, 0.4);
+    border: 1px solid #238636;
     align-self: flex-end;
 }
 
@@ -79,15 +70,21 @@ html, body, [class*="st-"] {
 
 .stTextInput > div > div > input {
     border-radius: 15px;
-    border: 2px solid #4CAF50;
+    border: 2px solid #238636;
     padding: 15px;
     font-size: 1.1em;
-    background-color: rgba(25, 25, 25, 0.9);
-    color: #F0F0F0;
+    background-color: #161B22;
+    color: #C9D1D9;
 }
-
+            
+.stTextInput > div > div > input:focus {
+    border: 2px solid #2ea043; 
+    outline: none; /* Remove default browser outline */
+    box-shadow: 0 0 0 2px rgba(46, 160, 67, 0.5); 
+}
+            
 .stButton > button {
-    background: linear-gradient(45deg, #4CAF50, #66BB6A);
+    background-color: #238636;
     color: white;
     border-radius: 15px;
     padding: 12px 30px;
@@ -97,8 +94,14 @@ html, body, [class*="st-"] {
 }
 
 .stButton > button:hover {
-    background: linear-gradient(45deg, #5cb85c, #72c676);
+    background-color: #2ea043;
 }
+
+strong {
+    color: #58A6FF; 
+    font-weight: 600;
+}
+
 </style>
 """, unsafe_allow_html=True)
 
@@ -117,7 +120,10 @@ with chat_history_container:
         if msg_type == "user":
             st.markdown(f'<div class="message-row" style="justify-content: flex-end;"><div class="user-message">{msg_content}</div></div>', unsafe_allow_html=True)
         else:
-            st.markdown(f'<div class="message-row" style="justify-content: flex-start;"><div class="bot-message">{msg_content}</div></div>', unsafe_allow_html=True)
+            formatted_content = msg_content.replace('**', '<bold>').replace('##', '<bold>')
+            formatted_content = formatted_content.replace('<bold>', '</bold>', 1) # Close the first ** or ##
+            formatted_content = formatted_content.replace('<bold>', '</bold>') # Close any remaining ones
+            st.markdown(f'<div class="message-row" style="justify-content: flex-start;"><div class="bot-message">{formatted_content}</div></div>', unsafe_allow_html=True)
 
 # Send message to Rasa
 def send_message_to_rasa(message):

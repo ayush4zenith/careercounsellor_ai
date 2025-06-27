@@ -162,7 +162,7 @@ CAREER_DATA = {
             "resources": ["Professional development courses", "Teacher associations", "Educational technology resources"]
         }
     },
-    "practical": {
+    "practical/engineer": {
         "Electrician": {
             "description": "Installs, maintains, and repairs electrical wiring, equipment, and fixtures in homes, businesses, and factories. Ensures systems are safe and functional.",
             "skills": ["Electrical Systems", "Troubleshooting", "Safety Protocols", "Blueprint Reading", "Manual Dexterity", "Problem-solving", "Code Compliance"],

@@ -6,7 +6,7 @@ pipeline:
 - name: RegexFeaturizer
 - name: LexicalSyntacticFeaturizer
 - name: CountVectorsFeaturizer     # for word-level features
-    #- name: CountVectorsFeaturizer # Comment out this one (for char-level n-gram features)
+    #- name: CountVectorsFeaturizer 
     #  analyzer: CharNGramAnalyzer
     #  min_ngram: 1
     #  max_ngram: 4
@@ -31,5 +31,5 @@ policies:
   epochs: 100
   max_history: 5
   rejection_threshold: 0.6
-    # REMOVED: - name: TwoStageFallbackPolicy (from previous fix)
+  # REMOVED: - name: TwoStageFallbackPolicy 
 assistant_id: 20250622-200934-greasy-stress

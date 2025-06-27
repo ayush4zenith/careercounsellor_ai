@@ -1,4 +1,4 @@
-rasa
+rasa==3.6.21
 nltk==3.8.1
 streamlit==1.36.0
 requests==2.32.3
